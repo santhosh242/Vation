@@ -1,0 +1,53 @@
+{
+  "id":"com.vation:vation.all:slingosgifeature:1.0.0-SNAPSHOT",
+  "bundles":[
+    {
+      "id":"com.vation:vation.core:1.0.0-SNAPSHOT",
+      "Bundle-SymbolicName":"vation.core",
+      "Bundle-Version":"1.0.0.SNAPSHOT",
+      "start-order":"20",
+      "content-package-origins":"com.vation:vation.all:1.0.0-SNAPSHOT"
+    }
+  ],
+  "configurations":  {
+    "com.adobe.cq.wcm.core.components.internal.servlets.TableOfContentsFilter~vation":    {
+      "enabled":"true",
+      ":configurator:content-package-origins":"com.vation:vation.all:1.0.0-SNAPSHOT|com.vation:vation.ui.config:1.0.0-SNAPSHOT"
+    },
+    "org.apache.sling.commons.log.LogManager.factory.config~vation":    {
+      "org.apache.sling.commons.log.names":[
+        "com.vation"
+      ],
+      "org.apache.sling.commons.log.level":"INFO",
+      "org.apache.sling.commons.log.file":"logs/error.log",
+      "org.apache.sling.commons.log.additiv":"false",
+      ":configurator:content-package-origins":"com.vation:vation.all:1.0.0-SNAPSHOT|com.vation:vation.ui.config:1.0.0-SNAPSHOT"
+    }
+  },
+  "repoinit:TEXT|true":[
+    "# origin=com.vation:vation.all:1.0.0-SNAPSHOT|com.vation:vation.ui.config:1.0.0-SNAPSHOT source=org.apache.sling.jcr.repoinit.RepositoryInitializer~vation\r",
+    "create path (sling:OrderedFolder) /content/dam/vation\r",
+    "create path (nt:unstructured) /content/dam/vation/jcr:content\r",
+    "set properties on /content/dam/vation/jcr:content",
+    "  set cq:conf{String} to /conf/vation",
+    "  set jcr:title{String} to \"Vation\"",
+    "end"
+  ],
+  "content-packages:ARTIFACTS|true":[
+    "com.vation:vation.ui.config:zip:cp2fm-converted:1.0.0-SNAPSHOT",
+    "com.vation:vation.ui.apps:zip:cp2fm-converted:1.0.0-SNAPSHOT",
+    "com.vation:vation.all:zip:cp2fm-converted:1.0.0-SNAPSHOT"
+  ],
+  "api-regions:JSON|false":[
+    {
+      "name":"global",
+      "exports":[
+        "com.vation.core.filters",
+        "com.vation.core.listeners",
+        "com.vation.core.models",
+        "com.vation.core.schedulers",
+        "com.vation.core.servlets"
+      ]
+    }
+  ]
+}

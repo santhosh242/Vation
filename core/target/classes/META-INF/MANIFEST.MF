@@ -1,0 +1,47 @@
+Manifest-Version: 1.0
+Bundle-Category: Vation
+Bundle-Description: Core bundle for Vation
+Bundle-ManifestVersion: 2
+Bundle-Name: Vation - Core
+Bundle-SymbolicName: vation.core
+Bundle-Version: 1.0.0.SNAPSHOT
+Export-Package: com.vation.core.filters;version="1.0";uses:="javax.ser
+ vlet",com.vation.core.listeners;version="1.0";uses:="org.apache.sling
+ .api.resource.observation",com.vation.core.models;version="1.0";uses:
+ ="javax.annotation,org.apache.sling.api,org.apache.sling.api.resource
+ ,org.apache.sling.models.annotations,org.apache.sling.models.annotati
+ ons.injectorspecific",com.vation.core.schedulers;version="1.0",com.va
+ tion.core.servlets;version="1.0";uses:="javax.servlet,org.apache.slin
+ g.api,org.apache.sling.api.servlets"
+Import-Package: javax.annotation;version="0.0.0",com.day.cq.commons.jc
+ r;version="[6.0,7)",com.day.cq.wcm.api;version="[1.30,2)",com.vation.
+ core.filters;version="[1.0,2)",com.vation.core.listeners;version="[1.
+ 0,2)",com.vation.core.schedulers;version="[1.0,2)",com.vation.core.se
+ rvlets;version="[1.0,2)",javax.inject;version="[1.0,2)",javax.jcr;ver
+ sion="[1.1,2)",javax.servlet;version="[3.1,4)",org.apache.sling.api;v
+ ersion="[2.3,3)",org.apache.sling.api.request;version="[2.7,3)",org.a
+ pache.sling.api.resource;version="[2.13,3)",org.apache.sling.api.reso
+ urce.observation;version="[1.2,2)",org.apache.sling.api.servlets;vers
+ ion="[2.4,3)",org.apache.sling.models.annotations;version="[1.5,2)",o
+ rg.apache.sling.models.annotations.injectorspecific;version="[1.1,2)"
+ ,org.slf4j;version="[1.7,2)"
+Provide-Capability: osgi.service;objectClass:List<String>="java.lang.R
+ unnable",osgi.service;objectClass:List<String>="javax.servlet.Filter"
+ ;uses:="javax.servlet",osgi.service;objectClass:List<String>="javax.s
+ ervlet.Servlet";uses:="javax.servlet",osgi.service;objectClass:List<S
+ tring>="org.apache.sling.api.resource.observation.ResourceChangeListe
+ ner";uses:="org.apache.sling.api.resource.observation"
+Require-Capability: osgi.extender;filter:="(&(osgi.extender=osgi.compo
+ nent)(version>=1.5.0)(!(version>=2.0.0)))",osgi.ee;filter:="(&(osgi.e
+ e=JavaSE)(version=11))"
+Service-Component: OSGI-INF/com.vation.core.filters.LoggingFilter.xml,
+ OSGI-INF/com.vation.core.listeners.SimpleResourceListener.xml,OSGI-IN
+ F/com.vation.core.schedulers.SimpleScheduledTask.xml,OSGI-INF/com.vat
+ ion.core.servlets.ContactFormServlet.xml,OSGI-INF/com.vation.core.ser
+ vlets.DeleteServlet.xml,OSGI-INF/com.vation.core.servlets.SimpleServl
+ et.xml
+Sling-Model-Classes: com.vation.core.models.ContactFormModel,com.vatio
+ n.core.models.FooterModel,com.vation.core.models.HeaderNavigationMode
+ l,com.vation.core.models.HelloWorldModel,com.vation.core.models.NavMu
+ ltiField,com.vation.core.models.TableModel
+

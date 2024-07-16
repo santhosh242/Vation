@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/conf/vation" mode="merge"/>
+    <filter root="/content/vation" mode="merge"/>
+    <filter root="/content/dam/vation" mode="merge">
+        <exclude pattern="/content/dam/vation(/.*)?"/>
+        <include pattern="/content/dam/vation/jcr:content(/.*)?"/>
+    </filter>
+    <filter root="/content/dam/vation/asset.jpg" mode="merge"/>
+    <filter root="/content/experience-fragments/vation" mode="merge"/>
+</workspaceFilter>

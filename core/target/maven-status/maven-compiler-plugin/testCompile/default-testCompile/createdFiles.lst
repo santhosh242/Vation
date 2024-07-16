@@ -1,0 +1,7 @@
+com\vation\core\models\HelloWorldModelTest.class
+com\vation\core\testcontext\AppAemContext.class
+com\vation\core\testcontext\AppAemContext$1.class
+com\vation\core\listeners\SimpleResourceListenerTest.class
+com\vation\core\schedulers\SimpleScheduledTaskTest.class
+com\vation\core\filters\LoggingFilterTest.class
+com\vation\core\servlets\SimpleServletTest.class

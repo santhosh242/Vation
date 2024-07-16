@@ -1,0 +1,107 @@
+{
+  "id":"com.vation:vation.all:slingosgifeature:user-aggregated-publish:1.0.0-SNAPSHOT",
+  "bundles":[
+    {
+      "id":"com.vation:vation.core:1.0.0-SNAPSHOT",
+      "feature-origins":"com.vation:vation.all:slingosgifeature:1.0.0-SNAPSHOT",
+      "Bundle-SymbolicName":"vation.core",
+      "Bundle-Version":"1.0.0.SNAPSHOT",
+      "start-order":"20",
+      "content-package-origins":"com.vation:vation.all:1.0.0-SNAPSHOT"
+    }
+  ],
+  "configurations":  {
+    "com.adobe.cq.wcm.core.components.internal.servlets.TableOfContentsFilter~vation":    {
+      ":configurator:content-package-origins":"com.vation:vation.all:1.0.0-SNAPSHOT|com.vation:vation.ui.config:1.0.0-SNAPSHOT",
+      "enabled":"true",
+      ":configurator:feature-origins-enabled":[
+        "com.vation:vation.all:slingosgifeature:1.0.0-SNAPSHOT"
+      ],
+      ":configurator:feature-origins":[
+        "com.vation:vation.all:slingosgifeature:1.0.0-SNAPSHOT"
+      ]
+    },
+    "org.apache.sling.commons.log.LogManager.factory.config~vation":    {
+      ":configurator:content-package-origins":"com.vation:vation.all:1.0.0-SNAPSHOT|com.vation:vation.ui.config:1.0.0-SNAPSHOT",
+      "org.apache.sling.commons.log.names":[
+        "com.vation"
+      ],
+      "org.apache.sling.commons.log.level":"INFO",
+      "org.apache.sling.commons.log.file":"logs/error.log",
+      "org.apache.sling.commons.log.additiv":"false",
+      ":configurator:feature-origins-org.apache.sling.commons.log.names":[
+        "com.vation:vation.all:slingosgifeature:1.0.0-SNAPSHOT"
+      ],
+      ":configurator:feature-origins-org.apache.sling.commons.log.file":[
+        "com.vation:vation.all:slingosgifeature:1.0.0-SNAPSHOT"
+      ],
+      ":configurator:feature-origins-org.apache.sling.commons.log.level":[
+        "com.vation:vation.all:slingosgifeature:1.0.0-SNAPSHOT"
+      ],
+      ":configurator:feature-origins-org.apache.sling.commons.log.additiv":[
+        "com.vation:vation.all:slingosgifeature:1.0.0-SNAPSHOT"
+      ],
+      ":configurator:feature-origins":[
+        "com.vation:vation.all:slingosgifeature:1.0.0-SNAPSHOT"
+      ]
+    },
+    "org.apache.sling.jcr.resource.internal.JcrResourceResolverFactoryImpl":    {
+      ":configurator:content-package-origins":"com.vation:vation.all:1.0.0-SNAPSHOT|com.vation:vation.ui.config:1.0.0-SNAPSHOT",
+      "resource.resolver.mapping":[
+        "/content/vation/</",
+        "/:/"
+      ],
+      ":configurator:feature-origins-resource.resolver.mapping":[
+        "com.vation:vation.all:slingosgifeature:publish:1.0.0-SNAPSHOT"
+      ],
+      ":configurator:feature-origins":[
+        "com.vation:vation.all:slingosgifeature:publish:1.0.0-SNAPSHOT"
+      ]
+    }
+  },
+  "assembled-features:ARTIFACTS|TRANSIENT":[
+    "com.vation:vation.all:slingosgifeature:1.0.0-SNAPSHOT",
+    "com.vation:vation.all:slingosgifeature:publish:1.0.0-SNAPSHOT"
+  ],
+  "repoinit:TEXT|true":[
+    "# origin=com.vation:vation.all:1.0.0-SNAPSHOT|com.vation:vation.ui.config:1.0.0-SNAPSHOT source=org.apache.sling.jcr.repoinit.RepositoryInitializer~vation\r",
+    "create path (sling:OrderedFolder) /content/dam/vation\r",
+    "create path (nt:unstructured) /content/dam/vation/jcr:content\r",
+    "set properties on /content/dam/vation/jcr:content",
+    "  set cq:conf{String} to /conf/vation",
+    "  set jcr:title{String} to \"Vation\"",
+    "end"
+  ],
+  "content-packages:ARTIFACTS|true":[
+    {
+      "id":"com.vation:vation.ui.config:zip:cp2fm-converted:1.0.0-SNAPSHOT",
+      "feature-origins":"com.vation:vation.all:slingosgifeature:1.0.0-SNAPSHOT"
+    },
+    {
+      "id":"com.vation:vation.ui.apps:zip:cp2fm-converted:1.0.0-SNAPSHOT",
+      "feature-origins":"com.vation:vation.all:slingosgifeature:1.0.0-SNAPSHOT"
+    },
+    {
+      "id":"com.vation:vation.all:zip:cp2fm-converted:1.0.0-SNAPSHOT",
+      "feature-origins":"com.vation:vation.all:slingosgifeature:1.0.0-SNAPSHOT"
+    }
+  ],
+  "api-regions:JSON|false":[
+    {
+      "name":"global",
+      "exports":[
+        "com.vation.core.filters",
+        "com.vation.core.listeners",
+        "com.vation.core.models",
+        "com.vation.core.schedulers",
+        "com.vation.core.servlets"
+      ],
+      "feature-origins":[
+        "com.vation:vation.all:slingosgifeature:1.0.0-SNAPSHOT"
+      ]
+    }
+  ],
+  "artifact-rules:JSON|false":{
+
+  }
+}

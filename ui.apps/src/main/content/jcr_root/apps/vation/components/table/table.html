@@ -1,0 +1,89 @@
+<style>
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  th,
+  td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: left;
+  }
+
+  th {
+    background-color: #f2f2f2;
+  }
+</style>
+<div data-sly-use.formData="${'com.vation.core.models.TableModel'}">
+  <div data-sly-use.ContactFormModel="${'com.vation.core.models.ContactFormModel'}">
+    <table id="dataTable">
+      <thead>
+        <tr>
+          <th>${ContactFormModel.name}</th>
+          <th>${ContactFormModel.email}</th>
+          <th>${ContactFormModel.subject}</th>
+          <th>${ContactFormModel.message}</th>
+          <th>Edit</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        <sly data-sly-list="${formData.formDataNodes}">
+          <tr class="table-data">
+            <td>${item.name}</td>
+            <td>${item.email}</td>
+            <td>${item.subject}</td>
+            <td>${item.message}</td>
+            <td>
+              <a href="#" class="edit-link">Edit</a>
+            </td>
+            <td>
+              <a href="#" class="delete-link">Delete</a>
+            </td>
+          </tr>
+        </sly>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const table = document.getElementById('dataTable');
+    const form = document.getElementById('contactForm');
+
+    table.addEventListener('click', function (event) {
+      if (event.target.classList.contains('edit-link')) {
+        event.preventDefault();
+        const tableRow = event.target.closest('tr');
+        const tableData = tableRow.querySelectorAll('td');
+        const cellValues = Array.from(tableData).slice(0, 4).map(td => td.innerHTML.trim());
+        form.elements['name'].value = cellValues[0] || '';
+        form.elements['email'].value = cellValues[1] || '';
+        form.elements['subject'].value = cellValues[2] || '';
+        form.elements['message'].value = cellValues[3] || '';
+      } else if (event.target.classList.contains('delete-link')) {
+        event.preventDefault();
+        const tableRow = event.target.closest('tr');
+        const dataToDelete = tableRow.querySelector('td:first-child').innerText.trim();
+        const deleteData = new FormData();
+        deleteData.append('data', dataToDelete);
+        $.ajax({
+          type: 'POST',
+          url: '/bin/example/delete',
+          data: deleteData,
+          processData: false,
+          contentType: false,
+          success: function (response) {
+            $('#responseMessage').html('<p>' + response + '</p>');
+            window.location.reload();
+          },
+          error: function (xhr, status, error) {
+            $('#responseMessage').html('<p>Error: ' + error + '</p>');
+          }
+        });
+      }
+    });
+  });
+</script>

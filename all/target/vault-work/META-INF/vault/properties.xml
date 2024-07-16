@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<comment>Vation - All</comment>
+<entry key="allowIndexDefinitions">false</entry>
+<entry key="created">2024-07-12T11:45:10.241Z</entry>
+<entry key="groupId">com.vation</entry>
+<entry key="name">vation.all</entry>
+<entry key="description">All content package for Vation</entry>
+<entry key="artifactId">vation.all</entry>
+<entry key="version">1.0.0-SNAPSHOT</entry>
+<entry key="packageType">container</entry>
+<entry key="requiresRoot">false</entry>
+<entry key="group">com.vation</entry>
+</properties>

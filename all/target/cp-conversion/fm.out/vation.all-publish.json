@@ -1,0 +1,12 @@
+{
+  "id":"com.vation:vation.all:slingosgifeature:publish:1.0.0-SNAPSHOT",
+  "configurations":  {
+    "org.apache.sling.jcr.resource.internal.JcrResourceResolverFactoryImpl":    {
+      "resource.resolver.mapping":[
+        "/content/vation/</",
+        "/:/"
+      ],
+      ":configurator:content-package-origins":"com.vation:vation.all:1.0.0-SNAPSHOT|com.vation:vation.ui.config:1.0.0-SNAPSHOT"
+    }
+  }
+}

@@ -1,0 +1,4 @@
+com\vation\it\tests\GetPageIT.class
+com\vation\it\tests\HtmlUnitClient.class
+com\vation\it\tests\CreatePageIT.class
+com\vation\it\tests\PublishPageValidationIT.class
