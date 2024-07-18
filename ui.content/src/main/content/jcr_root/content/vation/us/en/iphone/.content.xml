@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:lastModified="{Date}2024-07-16T17:05:49.868+05:30"
+        cq:lastModifiedBy="admin"
+        cq:template="/conf/vation/settings/wcm/templates/page-content"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Iphone"
+        sling:resourceType="vation/components/page">
+        <root
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="vation/components/container"
+            layout="responsiveGrid">
+            <container
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="vation/components/container"
+                layout="responsiveGrid">
+                <title
+                    jcr:lastModified="{Date}2024-07-16T12:58:43.954+05:30"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Iphone"
+                    sling:resourceType="vation/components/title"/>
+                <container
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="vation/components/container"
+                    layout="responsiveGrid">
+                    <subtitle
+                        cq:styleIds="[1721114177453]"
+                        jcr:created="{Date}2024-07-16T12:41:12.013+05:30"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2024-07-16T13:13:51.687+05:30"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="vation/components/subTitle"
+                        subtitle="this is sub title"/>
+                </container>
+            </container>
+        </root>
+    </jcr:content>
+</jcr:root>
