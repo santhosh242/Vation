@@ -238,10 +238,13 @@
                 </policy_1574694950110>
                 <policy_1574695586800
                     jcr:description="Allows the page components and defines the component mapping (this configures what components should be automatically created when authors drop assets from the content finder to the page editor)."
+                    jcr:lastModified="{Date}2024-06-25T15:17:09.281+05:30"
+                    jcr:lastModifiedBy="admin"
                     jcr:primaryType="nt:unstructured"
                     jcr:title="Page Content"
                     sling:resourceType="wcm/core/components/policy/policy"
-                    components="[group:Vation - Content,/apps/vation/components/form/container]">
+                    components="[/apps/skyplus6ev2/components/custom/footerSocial,group:Vation - Content,/apps/vation/components/form/container]"
+                    layoutDisabled="false">
                     <jcr:content jcr:primaryType="nt:unstructured"/>
                     <cq:authoring jcr:primaryType="nt:unstructured">
                         <assetToComponentMapping jcr:primaryType="nt:unstructured">
@@ -332,14 +335,52 @@
             <page jcr:primaryType="nt:unstructured">
                 <policy
                     jcr:description="Includes the required client libraries."
+                    jcr:lastModified="{Date}2024-07-15T17:25:39.367+05:30"
+                    jcr:lastModifiedBy="admin"
                     jcr:primaryType="nt:unstructured"
                     jcr:title="Generic Page"
                     sling:resourceType="wcm/core/components/policy/policy"
                     clientlibs="[vation.dependencies,vation.site]"
+                    clientlibsAsync="false"
                     clientlibsJsHead="vation.dependencies">
                     <jcr:content jcr:primaryType="nt:unstructured"/>
                 </policy>
             </page>
+            <subTitle jcr:primaryType="nt:unstructured">
+                <policy_1721114107147
+                    jcr:lastModified="{Date}2024-07-16T14:50:03.509+05:30"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="test"
+                    sling:resourceType="wcm/core/components/policy/policy"
+                    isDecorative="false"
+                    subtitle="This is sub title">
+                    <jcr:content jcr:primaryType="nt:unstructured"/>
+                    <cq:styleGroups jcr:primaryType="nt:unstructured">
+                        <item0
+                            cq:styleGroupLabel="Text Style"
+                            jcr:primaryType="nt:unstructured">
+                            <cq:styles jcr:primaryType="nt:unstructured">
+                                <item0
+                                    cq:styleClasses="red-text"
+                                    cq:styleId="1721114177453"
+                                    cq:styleLabel="red"
+                                    jcr:primaryType="nt:unstructured"/>
+                                <item1
+                                    cq:styleClasses="green-text"
+                                    cq:styleId="1721114179728"
+                                    cq:styleLabel="green"
+                                    jcr:primaryType="nt:unstructured"/>
+                                <item2
+                                    cq:styleClasses="blue-text"
+                                    cq:styleId="1721120721959"
+                                    cq:styleLabel="blue"
+                                    jcr:primaryType="nt:unstructured"/>
+                            </cq:styles>
+                        </item0>
+                    </cq:styleGroups>
+                </policy_1721114107147>
+            </subTitle>
         </components>
     </vation>
     <wcm jcr:primaryType="nt:unstructured">

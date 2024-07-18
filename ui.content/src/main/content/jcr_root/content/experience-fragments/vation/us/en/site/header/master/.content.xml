@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
+        cq:lastModified="{Date}2024-07-11T17:59:47.128+05:30"
+        cq:lastModifiedBy="admin"
         cq:tags="[]"
         cq:template="/conf/vation/settings/wcm/templates/xf-web-variation"
         cq:xfMasterVariation="{Boolean}true"
@@ -13,22 +15,48 @@
             jcr:primaryType="nt:unstructured"
             sling:resourceType="vation/components/container"
             layout="simple">
-            <navigation
+            <headernavigation
+                jcr:created="{Date}2024-07-11T15:02:03.551+05:30"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2024-07-11T17:39:00.598+05:30"
+                jcr:lastModifiedBy="admin"
                 jcr:primaryType="nt:unstructured"
-                sling:resourceType="vation/components/navigation"
-                collectAllPages="false"
-                navigationRoot="/content/vation/us/en"
-                skipNavigationRoot="false"
-                structureDepth="1"/>
-            <languagenavigation
-                jcr:primaryType="nt:unstructured"
-                sling:resourceType="vation/components/languagenavigation"
-                navigationRoot="/content/vation/us"
-                structureDepth="2"/>
-            <search
-                jcr:primaryType="nt:unstructured"
-                sling:resourceType="vation/components/search"
-                searchRoot="/content/vation/us"/>
+                sling:resourceType="vation/components/headerNavigation"
+                buttontext="Join us"
+                buttonurl="#"
+                email="info@example.com"
+                mobilenumber="+012 345 6789"
+                title="GYMSTER">
+                <cards jcr:primaryType="nt:unstructured">
+                    <item0
+                        jcr:primaryType="nt:unstructured"
+                        linktitle="Home"
+                        url="#"/>
+                    <item1
+                        jcr:primaryType="nt:unstructured"
+                        linktitle="About"
+                        url="#"/>
+                    <item2
+                        jcr:primaryType="nt:unstructured"
+                        linktitle="Classes"
+                        url="#"/>
+                    <item3
+                        jcr:primaryType="nt:unstructured"
+                        linktitle="Trainers"
+                        url="#"/>
+                    <item4
+                        jcr:primaryType="nt:unstructured"
+                        linktitle="Contact"
+                        url="#"/>
+                </cards>
+                <cq:responsive jcr:primaryType="nt:unstructured">
+                    <default
+                        jcr:primaryType="nt:unstructured"
+                        offset="0"
+                        width="12"/>
+                </cq:responsive>
+            </headernavigation>
+            <logo/>
         </root>
     </jcr:content>
 </jcr:root>

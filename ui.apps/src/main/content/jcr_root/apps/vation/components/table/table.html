@@ -71,13 +71,13 @@
         deleteData.append('data', dataToDelete);
         $.ajax({
           type: 'POST',
-          url: '/bin/example/delete',
+          url: '/bin/example/delete', 
           data: deleteData,
-          processData: false,
-          contentType: false,
+          processData: false, 
+          contentType: false, 
           success: function (response) {
             $('#responseMessage').html('<p>' + response + '</p>');
-            window.location.reload();
+              window.location.reload();
           },
           error: function (xhr, status, error) {
             $('#responseMessage').html('<p>Error: ' + error + '</p>');

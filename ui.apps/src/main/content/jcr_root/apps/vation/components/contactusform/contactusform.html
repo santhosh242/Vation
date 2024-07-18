@@ -1,39 +1,39 @@
 <div style="padding:24px;">
-  <div data-sly-test="${(wcmmode.edit || wcmmode.design)}" class="cq-placeholder" data-emptytext="Contact Us"></div>
-  <sly data-sly-use.clientLib="${'/libs/granite/sightly/templates/clientlib.html'}">
-    <clientlib data-sly-call="${clientLib.all @ categories='vation.styles'}" data-sly-unwrap />
-    <div data-sly-use.contactObj="com.vation.core.models.ContactFormModel">
-      <div class="row g-0">
-        <div class="col-lg-6">
-          <div class="bg-dark p-5">
-            <form id="contactForm">
-              <div class="row g-3">
-                <div class="col-6">
-                  <input type="text" class="form-control bg-light border-0 px-4" name="name"
+<div data-sly-test="${(wcmmode.edit || wcmmode.design)}" class="cq-placeholder" data-emptytext="Contact Us"></div>
+<sly data-sly-use.clientLib="${'/libs/granite/sightly/templates/clientlib.html'}">
+<clientlib data-sly-call="${clientLib.all @ categories='vation.styles'}" data-sly-unwrap />
+<div data-sly-use.contactObj="com.vation.core.models.ContactFormModel">
+<div class="row g-0">
+<div class="col-lg-6">
+<div class="bg-dark p-5">
+<form id="contactForm">
+<div class="row g-3">
+<div class="col-6">
+<input type="text" class="form-control bg-light border-0 px-4" name="name"
                     placeholder="${contactObj.name}" style="height: 55px;" required>
-                </div>
-                <div class="col-6">
-                  <input type="email" class="form-control bg-light border-0 px-4" name="email"
+</div>
+<div class="col-6">
+<input type="email" class="form-control bg-light border-0 px-4" name="email"
                     placeholder="${contactObj.email}" style="height: 55px;" required>
-                </div>
-                <div class="col-12">
-                  <input type="text" class="form-control bg-light border-0 px-4" name="subject"
+</div>
+<div class="col-12">
+<input type="text" class="form-control bg-light border-0 px-4" name="subject"
                     placeholder="${contactObj.subject}" style="height: 55px;" required>
-                </div>
-                <div class="col-12">
-                  <textarea class="form-control bg-light border-0 px-4 py-3" rows="4" name="message"
+</div>
+<div class="col-12">
+<textarea class="form-control bg-light border-0 px-4 py-3" rows="4" name="message"
                     placeholder="${contactObj.message}" required></textarea>
-                </div>
-                <div class="col-12">
-                  <button class="btn btn-primary w-100 py-3" type="submit">Send Message</button>
-                </div>
-              </div>
-            </form>
-          </div>
-        </div>
-        <div class="col-lg-6"></div>
-      </div>
-    </div>
+</div>
+<div class="col-12">
+<button class="btn btn-primary w-100 py-3" type="submit">Send Message</button>
+</div>
+</div>
+</form>
+</div>
+</div>
+<div class="col-lg-6"></div>
+</div>
+</div>
 </div>
 </sly>
 </sly>
@@ -43,19 +43,18 @@
   $(document).ready(function () {
     $('#contactForm').submit(function (e) {
       e.preventDefault();
-
+ 
       var formData = $(this).serialize();
-
+ 
       $.ajax({
         type: 'POST',
-        url: '/bin/example/hello', 
-        data: formData,            
-        contentType: 'application/x-www-form-urlencoded',
+        url: '/bin/example/hello',
+        data: formData,
         success: function (response) {
           $('#responseMessage').html('<p>' + response + '</p>');
           setTimeout(function() {
             window.location.reload();
-          }, 3000);
+          }, 500);
         },
         error: function (xhr, status, error) {
           $('#responseMessage').html('<p>Error: ' + error + '</p>');
@@ -63,4 +62,5 @@
       });
     });
   });
+ 
 </script>
