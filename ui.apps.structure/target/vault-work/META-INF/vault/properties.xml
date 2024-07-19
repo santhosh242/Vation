@@ -4,7 +4,7 @@
 <comment>Vation - Repository Structure Package</comment>
 <entry key="cloudManagerTarget">none</entry>
 <entry key="allowIndexDefinitions">false</entry>
-<entry key="created">2024-07-12T11:44:32.872Z</entry>
+<entry key="created">2024-07-19T06:10:08.514Z</entry>
 <entry key="groupId">com.vation</entry>
 <entry key="name">vation.ui.apps.structure</entry>
 <entry key="description">Empty package that defines the structure of the Adobe Experience Manager repository the Code packages in this project deploy into.

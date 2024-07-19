@@ -1,4 +1,4 @@
-# File created on Fri Jul 12 17:15:12 IST 2024 by the Apache Sling Content Package to Sling Feature converter
+# File created on Fri Jul 19 11:40:18 IST 2024 by the Apache Sling Content Package to Sling Feature converter
 # content-package path, content-package ID, content-package type, content-package parent ID, path in parent content-package, absolute path
 C:\Users\MCPL#161\Desktop\AEM\New folder\all\target\vation.all-1.0.0-SNAPSHOT.zip,com.vation:vation.all:1.0.0-SNAPSHOT,CONTAINER,,,
 C:\Users\MCPL#161\Desktop\AEM\New folder\all\target\vation.all-1.0.0-SNAPSHOT.zip,com.vation:vation.ui.config:1.0.0-SNAPSHOT,CONTAINER,com.vation:vation.all:1.0.0-SNAPSHOT,/jcr_root/apps/vation-packages/application/install/vation.ui.config-1.0.0-SNAPSHOT.zip,C:\Users\MCPL#161\Desktop\AEM\New folder\all\target\vation.all-1.0.0-SNAPSHOT.zip!/jcr_root/apps/vation-packages/application/install/vation.ui.config-1.0.0-SNAPSHOT.zip

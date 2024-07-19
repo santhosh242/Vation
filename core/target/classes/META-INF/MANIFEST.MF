@@ -17,17 +17,20 @@ Import-Package: javax.annotation;version="0.0.0",com.adobe.cq.dam.cfm;
  version="[1.16,2)",com.adobe.granite.workflow;version="[1.2,2)",com.a
  dobe.granite.workflow.exec;version="[1.2,2)",com.adobe.granite.workfl
  ow.metadata;version="[1.0,2)",com.day.cq.commons.jcr;version="[6.0,7)
- ",com.day.cq.wcm.api;version="[1.30,2)",com.google.gson;version="[2.8
- ,3)",com.vation.core.filters;version="[1.0,2)",com.vation.core.listen
- ers;version="[1.0,2)",com.vation.core.servlets;version="[1.0,2)",java
- x.inject;version="[1.0,2)",javax.jcr;version="[1.1,2)",javax.servlet;
- version="[3.1,4)",org.apache.sling.api;version="[2.3,3)",org.apache.s
- ling.api.request;version="[2.7,3)",org.apache.sling.api.resource;vers
- ion="[2.13,3)",org.apache.sling.api.resource.observation;version="[1.
- 2,2)",org.apache.sling.api.servlets;version="[2.4,3)",org.apache.slin
- g.commons.scheduler;version="[2.5,3)",org.apache.sling.models.annotat
- ions;version="[1.5,2)",org.apache.sling.models.annotations.injectorsp
- ecific;version="[1.1,2)",org.slf4j;version="[1.7,2)"
+ ",com.day.cq.replication;version="[6.14,7)",com.day.cq.wcm.api;versio
+ n="[1.30,2)",com.day.cq.workflow;version="[1.0,2)",com.day.cq.workflo
+ w.exec;version="[1.0,2)",com.day.cq.workflow.model;version="[1.0,2)",
+ com.google.gson;version="[2.8,3)",com.vation.core.filters;version="[1
+ .0,2)",com.vation.core.listeners;version="[1.0,2)",com.vation.core.se
+ rvlets;version="[1.0,2)",javax.inject;version="[1.0,2)",javax.jcr;ver
+ sion="[1.1,2)",javax.servlet;version="[3.1,4)",org.apache.sling.api;v
+ ersion="[2.3,3)",org.apache.sling.api.request;version="[2.7,3)",org.a
+ pache.sling.api.resource;version="[2.13,3)",org.apache.sling.api.reso
+ urce.observation;version="[1.2,2)",org.apache.sling.api.servlets;vers
+ ion="[2.4,3)",org.apache.sling.commons.scheduler;version="[2.5,3)",or
+ g.apache.sling.models.annotations;version="[1.5,2)",org.apache.sling.
+ models.annotations.injectorspecific;version="[1.1,2)",org.slf4j;versi
+ on="[1.7,2)"
 Private-Package: com.vation.core.config,com.vation.core.workflow
 Provide-Capability: osgi.service;objectClass:List<String>="com.adobe.g
  ranite.workflow.exec.WorkflowProcess";uses:="com.adobe.granite.workfl
@@ -37,20 +40,24 @@ Provide-Capability: osgi.service;objectClass:List<String>="com.adobe.g
  vlet";uses:="javax.servlet",osgi.service;objectClass:List<String>="or
  g.apache.sling.api.resource.observation.ResourceChangeListener";uses:
  ="org.apache.sling.api.resource.observation"
-Require-Capability: osgi.service;filter:="(objectClass=org.apache.slin
- g.api.resource.ResourceResolverFactory)";effective:=active,osgi.servi
- ce;filter:="(objectClass=org.apache.sling.commons.scheduler.Scheduler
- )";effective:=active,osgi.extender;filter:="(&(osgi.extender=osgi.com
- ponent)(version>=1.5.0)(!(version>=2.0.0)))",osgi.ee;filter:="(&(osgi
- .ee=JavaSE)(version=11))"
+Require-Capability: osgi.service;filter:="(objectClass=com.day.cq.repl
+ ication.Replicator)";effective:=active,osgi.service;filter:="(objectC
+ lass=com.day.cq.workflow.WorkflowService)";effective:=active,osgi.ser
+ vice;filter:="(objectClass=org.apache.sling.api.resource.ResourceReso
+ lverFactory)";effective:=active,osgi.service;filter:="(objectClass=or
+ g.apache.sling.commons.scheduler.Scheduler)";effective:=active,osgi.e
+ xtender;filter:="(&(osgi.extender=osgi.component)(version>=1.5.0)(!(v
+ ersion>=2.0.0)))",osgi.ee;filter:="(&(osgi.ee=JavaSE)(version=11))"
 Service-Component: OSGI-INF/com.vation.core.filters.LoggingFilter.xml,
- OSGI-INF/com.vation.core.listeners.SimpleResourceListener.xml,OSGI-IN
- F/com.vation.core.schedulers.GeeksScheduler.xml,OSGI-INF/com.vation.c
- ore.schedulers.SimpleScheduledTask.xml,OSGI-INF/com.vation.core.servl
- ets.CFServlet.xml,OSGI-INF/com.vation.core.servlets.ContactFormServle
- t.xml,OSGI-INF/com.vation.core.servlets.DeleteServlet.xml,OSGI-INF/co
- m.vation.core.servlets.SimpleServlet.xml,OSGI-INF/com.vation.core.wor
- kflow.CustomWorkflow.xml
+ OSGI-INF/com.vation.core.listeners.CustomEventListener.xml,OSGI-INF/c
+ om.vation.core.listeners.SimpleResourceListener.xml,OSGI-INF/com.vati
+ on.core.schedulers.ActivateScheduler.xml,OSGI-INF/com.vation.core.sch
+ edulers.GymsterScheduler.xml,OSGI-INF/com.vation.core.schedulers.Simp
+ leScheduledTask.xml,OSGI-INF/com.vation.core.servlets.ContactFormServ
+ let.xml,OSGI-INF/com.vation.core.servlets.ContentFragmentServlet.xml,
+ OSGI-INF/com.vation.core.servlets.DeleteServlet.xml,OSGI-INF/com.vati
+ on.core.servlets.SimpleServlet.xml,OSGI-INF/com.vation.core.workflow.
+ CustomWorkflow.xml
 Sling-Model-Classes: com.vation.core.models.ContactFormModel,com.vatio
  n.core.models.FooterModel,com.vation.core.models.HeaderNavigationMode
  l,com.vation.core.models.HelloWorldModel,com.vation.core.models.NavMu

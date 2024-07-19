@@ -4,7 +4,7 @@
 <comment>Vation - UI apps</comment>
 <entry key="cloudManagerTarget">none</entry>
 <entry key="allowIndexDefinitions">false</entry>
-<entry key="created">2024-07-12T11:45:01.309Z</entry>
+<entry key="created">2024-07-19T06:10:13.083Z</entry>
 <entry key="groupId">com.vation</entry>
 <entry key="name">vation.ui.apps</entry>
 <entry key="description">UI apps package for Vation</entry>

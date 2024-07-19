@@ -37,7 +37,7 @@ public final class contactusform__002e__html extends RenderUnit {
 Object _dynamic_wcmmode = bindings.get("wcmmode");
 Object _global_clientlib = null;
 Object _global_contactobj = null;
-out.write("<!-- Contact Start -->\n");
+out.write("<div style=\"padding:24px;\">\n");
 {
     Object var_testvariable0 = ((renderContext.getObjectModel().toBoolean(renderContext.getObjectModel().resolveProperty(_dynamic_wcmmode, "edit")) ? renderContext.getObjectModel().resolveProperty(_dynamic_wcmmode, "edit") : renderContext.getObjectModel().resolveProperty(_dynamic_wcmmode, "design")));
     if (renderContext.getObjectModel().toBoolean(var_testvariable0)) {
@@ -46,7 +46,7 @@ out.write("<!-- Contact Start -->\n");
 }
 out.write("\n");
 _global_clientlib = renderContext.call("use", "/libs/granite/sightly/templates/clientlib.html", obj());
-out.write("\n    ");
+out.write("\n");
 {
     Object var_templatevar2 = renderContext.getObjectModel().resolveProperty(_global_clientlib, "all");
     {
@@ -59,7 +59,7 @@ out.write("\n    ");
 }
 out.write("\n");
 _global_contactobj = renderContext.call("use", com.vation.core.models.ContactFormModel.class.getName(), obj());
-out.write("<div>\n<div class=\"container-fluid p-5\">\n    <div class=\"mb-5 text-center\">\n        <h5 class=\"text-primary text-uppercase\">Contact Us</h5>\n        <h1 class=\"display-3 text-uppercase mb-0\">Get In Touch</h1>\n    </div>\n    <div class=\"row g-5 mb-5\">\n        <div class=\"col-lg-4\">\n            <div class=\"d-flex flex-column align-items-center bg-dark rounded text-center py-5 px-3\">\n                <div class=\"bg-primary rounded-circle d-flex align-items-center justify-content-center mb-3\" style=\"width: 60px; height: 60px;\">\n                    <i class=\"fa fa-map-marker-alt fs-4 text-white\"></i>\n                </div>\n                <h5 class=\"text-uppercase text-primary\">Visit Us</h5>\n                <p class=\"text-secondary mb-0\">123 Street, New York, USA</p>\n            </div>\n        </div>\n        <div class=\"col-lg-4\">\n            <div class=\"d-flex flex-column align-items-center bg-dark rounded text-center py-5 px-3\">\n                <div class=\"bg-primary rounded-circle d-flex align-items-center justify-content-center mb-3\" style=\"width: 60px; height: 60px;\">\n                    <i class=\"fa fa-envelope fs-4 text-white\"></i>\n                </div>\n                <h5 class=\"text-uppercase text-primary\">Email Us</h5>\n                <p class=\"text-secondary mb-0\">info@example.com</p>\n            </div>\n        </div>\n        <div class=\"col-lg-4\">\n            <div class=\"d-flex flex-column align-items-center bg-dark rounded text-center py-5 px-3\">\n                <div class=\"bg-primary rounded-circle d-flex align-items-center justify-content-center mb-3\" style=\"width: 60px; height: 60px;\">\n                    <i class=\"fa fa-phone fs-4 text-white\"></i>\n                </div>\n                <h5 class=\"text-uppercase text-primary\">Call Us</h5>\n                <p class=\"text-secondary mb-0\">+012 345 6789</p>\n            </div>\n        </div>\n    </div>\n    <div class=\"row g-0\">\n        <div class=\"col-lg-6\">\n            <div class=\"bg-dark p-5\">\n                <form>\n                    <div class=\"row g-3\">\n                        <div class=\"col-6\">\n                            <input type=\"text\" class=\"form-control bg-light border-0 px-4\"");
+out.write("<div>\n<div class=\"row g-0\">\n<div class=\"col-lg-6\">\n<div class=\"bg-dark p-5\">\n<form id=\"contactForm\">\n<div class=\"row g-3\">\n<div class=\"col-6\">\n<input type=\"text\" class=\"form-control bg-light border-0 px-4\" name=\"name\"");
 {
     Object var_attrvalue4 = renderContext.getObjectModel().resolveProperty(_global_contactobj, "name");
     {
@@ -80,7 +80,7 @@ out.write("<div>\n<div class=\"container-fluid p-5\">\n    <div class=\"mb-5 tex
         }
     }
 }
-out.write(" style=\"height: 55px;\"/>\n                        </div>\n                        <div class=\"col-6\">\n                            <input type=\"email\" class=\"form-control bg-light border-0 px-4\"");
+out.write(" style=\"height: 55px;\" required/>\n</div>\n<div class=\"col-6\">\n<input type=\"email\" class=\"form-control bg-light border-0 px-4\" name=\"email\"");
 {
     Object var_attrvalue8 = renderContext.getObjectModel().resolveProperty(_global_contactobj, "email");
     {
@@ -101,7 +101,7 @@ out.write(" style=\"height: 55px;\"/>\n                        </div>\n         
         }
     }
 }
-out.write(" style=\"height: 55px;\"/>\n                        </div>\n                        <div class=\"col-12\">\n                            <input type=\"text\" class=\"form-control bg-light border-0 px-4\"");
+out.write(" style=\"height: 55px;\" required/>\n</div>\n<div class=\"col-12\">\n<input type=\"text\" class=\"form-control bg-light border-0 px-4\" name=\"subject\"");
 {
     Object var_attrvalue12 = renderContext.getObjectModel().resolveProperty(_global_contactobj, "subject");
     {
@@ -122,7 +122,7 @@ out.write(" style=\"height: 55px;\"/>\n                        </div>\n         
         }
     }
 }
-out.write(" style=\"height: 55px;\"/>\n                        </div>\n                        <div class=\"col-12\">\n                            <textarea class=\"form-control bg-light border-0 px-4 py-3\" rows=\"4\"");
+out.write(" style=\"height: 55px;\" required/>\n</div>\n<div class=\"col-12\">\n<textarea class=\"form-control bg-light border-0 px-4 py-3\" rows=\"4\" name=\"message\"");
 {
     Object var_attrvalue16 = renderContext.getObjectModel().resolveProperty(_global_contactobj, "message");
     {
@@ -143,12 +143,7 @@ out.write(" style=\"height: 55px;\"/>\n                        </div>\n         
         }
     }
 }
-out.write("></textarea>\n                        </div>\n                        <div class=\"col-12\">\n                            <button class=\"btn btn-primary w-100 py-3\" type=\"submit\">");
-{
-    Object var_20 = renderContext.call("xss", renderContext.getObjectModel().resolveProperty(_global_contactobj, "sendmessage"), "text");
-    out.write(renderContext.getObjectModel().toString(var_20));
-}
-out.write("</button>\n                        </div>\n                    </div>\n                </form>\n            </div>\n        </div>\n        <div class=\"col-lg-6\">\n            <iframe class=\"w-100\" src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3001156.4288297426!2d-78.01371936852176!3d42.72876761954724!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4ccc4bf0f123a5a9%3A0xddcfc6c1de189567!2sNew%20York%2C%20USA!5e0!3m2!1sen!2sbd!4v1603794290143!5m2!1sen!2sbd\" frameborder=\"0\" style=\"height: 457px; border:0;\" allowfullscreen=\"\" aria-hidden=\"false\" tabindex=\"0\"></iframe>\n        </div>\n    </div>\n</div>\n</div>\n\n\n<!-- Contact End -->");
+out.write(" required></textarea>\n</div>\n<div class=\"col-12\">\n<button class=\"btn btn-primary w-100 py-3\" type=\"submit\">Send Message</button>\n</div>\n</div>\n</form>\n</div>\n</div>\n<div class=\"col-lg-6\"></div>\n</div>\n</div>\n</div>\n\n\n<div id=\"responseMessage\"></div>\n</div>\n<script>\n  $(document).ready(function () {\n    $('#contactForm').submit(function (e) {\n      e.preventDefault();\n \n      var formData = $(this).serialize();\n \n      $.ajax({\n        type: 'POST',\n        url: '/bin/example/hello',\n        data: formData,\n        success: function (response) {\n          $('#responseMessage').html('<p>' + response + '</p>');\n          setTimeout(function() {\n            window.location.reload();\n          }, 500);\n        },\n        error: function (xhr, status, error) {\n          $('#responseMessage').html('<p>Error: ' + error + '</p>');\n        }\n      });\n    });\n  });\n \n</script>");
 
 
 // End Of Main Template Body ----------------------------------------------------------------------

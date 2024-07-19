@@ -5,7 +5,7 @@
 <entry key="allowIndexDefinitions">false</entry>
 <entry key="acHandling">merge</entry>
 <entry key="dependencies-locations">com.vation:vation.ui.apps:1.0.0-SNAPSHOT=maven:com.vation:vation.ui.apps:1.0.0-SNAPSHOT:zip</entry>
-<entry key="created">2024-07-12T11:45:04.059Z</entry>
+<entry key="created">2024-07-19T06:10:14.900Z</entry>
 <entry key="groupId">com.vation</entry>
 <entry key="description">UI content package for Vation</entry>
 <entry key="version">1.0.0-SNAPSHOT</entry>
