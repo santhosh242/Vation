@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.3.0" name="com.vation.core.handler.CustomEventHandler">
+  <property name="event.topics" type="String">com/day/cq/replication/ReplicationAction/TYPE_ACTIVATE
+org/apache/sling/api/resource/Resource/ADDED</property>
+  <service>
+    <provide interface="org.osgi.service.event.EventHandler"/>
+  </service>
+  <implementation class="com.vation.core.handler.CustomEventHandler"/>
+</scr:component>
