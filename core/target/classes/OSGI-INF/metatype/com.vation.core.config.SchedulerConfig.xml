@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metatype:MetaData xmlns:metatype="http://www.osgi.org/xmlns/metatype/v1.2.0" localization="OSGI-INF/l10n/com.vation.core.config.SchedulerConfig">
+  <OCD id="com.vation.core.config.SchedulerConfig" name="Gymster Scheduler" description="">
+    <AD id="scheduler.expression" type="String" name="Scheduler expression" default="*/30\ *\ *\ *\ *\ ?"/>
+  </OCD>
+  <Designate pid="com.vation.core.schedulers.ActivateScheduler">
+    <Object ocdref="com.vation.core.config.SchedulerConfig"/>
+  </Designate>
+  <Designate pid="com.vation.core.schedulers.GymsterScheduler">
+    <Object ocdref="com.vation.core.config.SchedulerConfig"/>
+  </Designate>
+</metatype:MetaData>
